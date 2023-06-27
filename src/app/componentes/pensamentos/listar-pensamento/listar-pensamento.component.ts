@@ -15,6 +15,8 @@ export class ListarPensamentoComponent {
   }
 
   ngOnInit(): void {
-    this.service.listar()
+    this.service.listar().subscribe((listaPensamentos) => {
+      this.listaPensamentos = listaPensamentos
+    })
   }
 }
